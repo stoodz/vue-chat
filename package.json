@@ -1,0 +1,10 @@
+{
+  "name": "fieldapp-chat",
+  "version": "0.0.1",
+  "description": "starter chat for fieldapp",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.3.7",
+    "vue-focus": "^0.1.0"
+  }
+}

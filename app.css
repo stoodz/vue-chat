@@ -1,0 +1,25 @@
+
+[v-cloak] {display: none;}
+.contentWrapper {margin-left: 20px; margin-top: 20px;}
+.dockWrapper {position: absolute; bottom: 0; width: 100%;}
+.panel {margin-bottom: 0;}
+
+.chatTitleBar {background: #4e69a2;  max-height: 30px; line-height: 30px; }
+.chatBox .panel.closed { max-height: 30px;}
+.chatTitleBar.open { max-height: 430px; border-bottom: none;}
+.chatTitleBar.closed { max-height: 30px;}
+.chatTitleBar a {color: whitesmoke; font-weight: bold; margin-left: 20px;}
+.chatTitleBar span.closeChat {color:whitesmoke; font-weight: bold; float: right; margin-right: 10px;cursor: pointer; font-size: .8em;}
+.bodyToggle {cursor: pointer;}
+.chat-body {max-height: 330px; height: 330px; background: white; overflow-y: scroll;     padding: 15px 15px 50px 15px;}
+.chat-footer {padding: 0;}
+.chat-footer input {width: 80%;}
+.messages { list-style-type: none; margin: 0; padding: 0; }
+.messages-row { margin: 0px 0px; }
+.messages li {  padding: 0 10px;  display: block;  text-align: left;  position: relative;  max-width: 80%; border-radius: 10px;
+                float: left; box-shadow: 2px 2px 4px #888; margin-bottom: 20px; background: #eee; clear:left; }
+.messages li.me { float: right; text-align: right; background-color: #007AFF;  color: whitesmoke;  clear: right;}
+
+.submitBtn {width: 18%; border-radius: initial;}
+.newUserNotify {text-align: center; color: #008800;}
+button.clickToChat { }

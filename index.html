@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat testing</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+
+<!-- Chat wrapper -->
+<div class="chatContainer" id="my-user" value="Jeff">
+
+    <button class="btn btn-primary clickToChat" @click="showChatBox(0)">click for Ashley</button>
+    <button class="btn btn-primary clickToChat" @click="showChatBox(1)">click for Sarah</button>
+    <button class="btn btn-primary clickToChat" @click="showChatBox(2)">click for Katie</button>
+    <div v-cloak class="dockWrapper">
+        <div class="dock">
+            <div class="col-md-12">
+
+            <chatboxes guest-user="Ashley" chat-box=""></chatboxes>
+            <chatboxes guest-user="Sarah" chat-box=""></chatboxes>
+            <chatboxes guest-user="Katie" chat-box=""></chatboxes>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="chatboxes-template">
+
+<!-- START CHAT BOX -->
+
+<div class="col-md-3 chatBox"  v-show="chatBox">
+    <div class="panel panel-default">
+
+        <!-- CHAT TITLE BAR -->
+        <div class="chatTitleBar open" v-bind:class="{ 'open' : openChat }">
+            <a class="bodyToggle" @click="toggleChatBody">{{ guestUser }}</a>
+            <span class="closeChat" @click="showChatBox">X</span>
+
+            <!-- CHAT BODY -->
+            <div class="panel-body chat-body">
+                <ul class="messages" v-for="message in messages" >
+                    <div class="row messages-row">
+                        <li v-if="message.username == this.myUsername" class="me">{{ message.message }}</li>
+                        <li v-else >{{ message.username + ": " + message.message }}</li>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- CHAT FOOTER -->
+            <div class="panel-footer chat-footer">
+                <form @submit="send">
+                    <input id="messageFocus" v-model="message" placeholder="type a message..."  autofocus>
+                    <button type="submit" class="btn btn-primary submitBtn">Send</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</template>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.12/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.js"></script>
+<script src="/app.js"></script>
+
+</body>
+</html>
